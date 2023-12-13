@@ -18,3 +18,6 @@ Sabendo que os containers são ambientes isolados, as networks são redes de com
     - overlay: Driver overlay permite uma comunicação entre vários Dockers em máquinas diferentes.
     - maclan: Driver maclan permite setar um mac address em um container.
     - none: Não existe rede de comunicação entre containers, permanecendo assim os containers atuando de forma isolada.
+
+Para um container acessar dados do Host, usa-se: ```host.docker.internal```
+<pre>http>//host.docker.internal:8000</pre>
