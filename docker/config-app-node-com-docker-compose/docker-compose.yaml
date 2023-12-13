@@ -1,0 +1,36 @@
+version: '3.0'
+
+services:
+  node:
+    build:
+      context: ./node
+      dockerfile: Dockerfile
+    container_name: app_node
+    networks:
+      - node-network
+    volumes:
+      - ./node/:/usr/src/app
+    command: ['node', './src/index.js']
+    tty: true
+    ports:
+      - "3030:3000"
+  db:
+    platform: linux/x86_64
+    image: mysql:5.7
+    command: --innodb-use-native-aio=0
+    container_name: db
+    restart: always
+    tty: true
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=nodedb
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+    networks:
+      - node-network
+
+networks:
+  node-network:
+    driver: bridge
