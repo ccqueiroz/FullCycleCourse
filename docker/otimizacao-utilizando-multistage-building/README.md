@@ -1,8 +1,8 @@
 ## Otimização de imagens utilizando multistage building
 
 A estratégia de utilização de multistage building para gerar otimizações de imagens, dar-se por separar a construção de uma imagem final por etapas, onde:
-    - 1º etapa: gera imagem, executam-se todos os processamentos devidos;
-    - 2º etapa: gera-se um container com uma imagem mais limpa possível, sem muitas dependências, como por exemplo, imagens alpine ou mesmo imagens scratch, sendo esta, uma imagem mínima do Docker, sendo a base para construção de outras imagens. Após este processo, copia apenas os arquivos necessários da etapa 1 do processo. 
+- 1º etapa: gera imagem, executam-se todos os processamentos devidos;
+- 2º etapa: gera-se um container com uma imagem mais limpa possível, sem muitas dependências, como por exemplo, imagens alpine ou mesmo imagens scratch, sendo esta, uma imagem mínima do Docker, sendo a base para construção de outras imagens. Após este processo, copia apenas os arquivos necessários da etapa 1 do processo. 
 
 <pre>
     # 1º estágio
