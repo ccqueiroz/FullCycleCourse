@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-bind-mount
+    volumes:
+      - type: bind
+        source: ./index.html
+        target: /usr/share/nginx/html/index.html
+    ports:
+      - 90:80
