@@ -9,6 +9,9 @@
 - ENTRYPOINT: Modifica o entrypoint da imagem
 - CMD: Passa parâmetros de inicialização sobreescrevendo comandos CMD da imagem
 - AS: Cria um alias para imagem
+- ENV: Permite criar variáveis de ambientes
+
+#### Sempre que for criado um arquivo de entrypoint e adicionar a instrução exec "$@", esta instrução permitirá que um comando (CMD) vindo do usuário possa ser execudado.
 
 <pre>
     #Dockerfile
